@@ -1,0 +1,14 @@
+<svg width="420" height="180" viewBox="0 0 420 180" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="CARITA TEMBONG">
+  <!-- Monogram: C (Carita) + T (Tembong) joined by a clay flow -->
+  <g transform="translate(150,10)">
+    <g stroke="#2F5A4C" stroke-width="13" stroke-linecap="round" stroke-linejoin="round" fill="none">
+      <path d="M74 26 A30 30 0 1 0 74 74" />
+      <path d="M58 30 H102" />
+      <path d="M80 30 V80" />
+    </g>
+    <path d="M34 60 C56 73 82 71 106 55 C88 67 60 69 40 63 Z" fill="#C0603A" />
+  </g>
+  <!-- Wordmark -->
+  <text x="210" y="150" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif"
+        font-size="30" font-weight="600" letter-spacing="4" fill="#2F5A4C">CARITA TEMBONG</text>
+</svg>
