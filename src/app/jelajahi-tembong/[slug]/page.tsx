@@ -8,7 +8,6 @@ import { Button } from "@/components/ui/Button";
 import { Badge } from "@/components/ui/Badge";
 import { Reveal } from "@/components/ui/Reveal";
 import { ExploreCallout } from "@/components/home/ExploreCallout";
-import { siteConfig } from "@/config/site";
 import { destinations, destinationSource } from "@/data/destinations";
 import { mapPoints } from "@/data/mapPoints";
 import { googleMapsUrl } from "@/lib/maps";
@@ -147,7 +146,45 @@ export default async function DestinationDetailPage({
               <Badge tone="cultural">{destination.status}</Badge>
               <h2 className="type-h2 mt-4 text-brand">Tentang Tempat Ini</h2>
               <p className="type-lead mt-5 text-secondary">{destination.summary}</p>
+              {destination.story?.map((para, index) => (
+                <p key={index} className="mt-4 text-secondary">
+                  {para}
+                </p>
+              ))}
               <p className="mt-4 text-secondary">{statusNote[destination.status]}</p>
+
+              {destination.lore && (
+                <div className="mt-10 rounded-xl border-l-2 border-decorative bg-surface-muted/60 p-6">
+                  <span className="type-eyebrow text-cultural">Tradisi Lisan</span>
+                  <h3 className="mt-2 font-display text-xl font-semibold text-brand">
+                    {destination.lore.heading}
+                  </h3>
+                  {destination.lore.body.map((para, index) => (
+                    <p key={index} className="mt-3 text-secondary">
+                      {para}
+                    </p>
+                  ))}
+                </div>
+              )}
+
+              {destination.etiquette && destination.etiquette.length > 0 && (
+                <>
+                  <h3 className="mt-10 font-display text-xl font-semibold text-brand">
+                    Adab Berkunjung
+                  </h3>
+                  <ul className="mt-4 flex flex-col gap-3">
+                    {destination.etiquette.map((item, index) => (
+                      <li key={index} className="flex gap-3 text-secondary">
+                        <span
+                          aria-hidden="true"
+                          className="mt-2 h-2 w-2 shrink-0 rounded-full bg-decorative"
+                        />
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </>
+              )}
 
               <h3 className="mt-10 font-display text-xl font-semibold text-brand">
                 Sebelum Berkunjung
@@ -163,6 +200,12 @@ export default async function DestinationDetailPage({
                   </li>
                 ))}
               </ul>
+
+              {destination.note && (
+                <p className="mt-8 border-t border-soft pt-4 text-xs text-secondary">
+                  {destination.note}
+                </p>
+              )}
             </div>
 
             {/* Facts & location */}

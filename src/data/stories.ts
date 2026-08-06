@@ -64,28 +64,75 @@ export const stories: Story[] = [
     category: "Seni & Warisan",
     title: "Gerak yang Menjaga Warisan",
     summary:
-      "Perguruan Cibinong menjaga pencak silat dan debus di Tembong, latihan rutin malam Minggu dan malam Rabu.",
+      "Padepokan Bulakan Cibinong 2 menghidupkan kembali pencak silat aliran Cimande dan debus di Desa Tembong, dari halaman rumah di Kampung Salabarang hingga panggung tingkat kabupaten.",
     image: silatImage,
     imageAlt:
       "Penampilan pencak silat diiringi tabuhan kendang di halaman rumah warga Desa Tembong.",
     caption: "Latihan dan penampilan pencak silat di Desa Tembong.",
     paragraphs: [
       [
-        "Di Desa Tembong, tradisi pencak silat dijaga oleh ",
-        { mark: "Perguruan Cibinong" },
-        " yang diketuai oleh ",
-        { mark: "Kang Alek" },
-        ". Latihan digelar rutin setiap malam Minggu dan malam Rabu, diiringi tabuhan kendang yang menghidupkan suasana.",
+        "Di Kampung Salabarang, tradisi pencak silat Desa Tembong dijaga oleh ",
+        { mark: "Padepokan Bulakan Cibinong 2" },
+        ". Padepokan ini didirikan pada tahun 2014 oleh Kang Alek, yang sekaligus menjadi ketua dan pelatihnya. Jurus yang diajarkan berkiblat pada aliran ",
+        { mark: "Cimande" },
+        ", aliran silat legendaris dari daerah Ciawi, Bogor.",
       ],
       [
-        "Selain gerak bela diri, di dalamnya juga hidup ",
+        "Silat sebenarnya sudah lama hidup di Tembong, tetapi sempat ",
+        { mark: "pakem" },
+        ", istilah setempat untuk vakum atau mati suri, setelah kepengurusan para sesepuh terdahulu di bawah Pak Samsudi perlahan surut. Dengan dukungan dari pemerintah desa di bawah Kepala Desa ",
+        { mark: "Adang Kosasih" },
+        ", Kang Alek membangunnya kembali agar gairah bela diri warga tumbuh lagi.",
+      ],
+      [
+        "Nama padepokan menyimpan kisahnya sendiri. Menurut cerita yang dituturkan Kang Alek, nama ",
+        { mark: "Bulakan Cibinong" },
+        " diambil dari sumber mata air setempat, dan disarankan oleh seseorang yang datang menemuinya secara khusus saat padepokan hendak dirintis. Kisah ini hidup sebagai tuturan warga, bukan keterangan yang dapat diverifikasi.",
+      ],
+      [
+        "Berbeda dari bela diri modern, padepokan ini tidak memakai sistem sabuk atau tingkatan formal. Latihannya justru menonjolkan keindahan seni gerak. Selain tangan kosong, murid dilatih memakai senjata tradisional berupa ",
+        { mark: "golok dan batang besi" },
+        ", dan pada pementasan besar ditampilkan pula ",
         { mark: "debus" },
-        ", kesenian tradisional khas Banten yang memadukan seni bela diri dengan atraksi ketahanan tubuh.",
+        ", atraksi ketahanan tubuh khas Banten, termasuk permainan api.",
       ],
       [
-        "Bagi generasi muda, latihan ini menjadi ruang untuk mengenal gerak, disiplin, dan warisan budaya yang diturunkan dari generasi sebelumnya.",
+        "Denyut latihan dan pementasan datang dari ",
+        { mark: "kendang" },
+        " yang ditabuh warga asli Tembong. Menurut kepercayaan warga, kendang ini tidak boleh ditabuh sembarangan: sesepuh yang menguasai silsilahnya membacakan doa terlebih dahulu sebelum kendang dimainkan.",
+      ],
+      [
+        "Sebelum tampil di depan umum atau memperagakan debus, warga juga menjalankan ritual penyucian alat menggunakan ",
+        { mark: "air putih asem dan air susu" },
+        " yang dipercikkan pada alat musik. Tradisi ini dijaga sebagai bagian dari adab dan keselamatan pertunjukan.",
+      ],
+      [
+        "Latihan bersama digelar di halaman depan rumah Kang Alek, setiap ",
+        { mark: "malam Minggu dan malam Rabu" },
+        ", diiringi tabuhan kendang. Di hari biasa, murid tetap boleh berlatih mandiri tanpa iringan musik. Pesertanya beragam, dari anak usia SMP dan Madrasah Tsanawiyah yang paling banyak, hingga warga dewasa berusia 20 sampai 40 tahun.",
+      ],
+      [
+        "Keanggotaan terbuka bagi siapa saja, dengan satu syarat yang tidak bisa ditawar: setiap murid wajib mengantongi ",
+        { mark: "izin orang tua" },
+        " sebelum mulai berlatih.",
+      ],
+      [
+        "Bagi Tembong, padepokan ini menjadi ruang yang mempersatukan anak muda dan warga. Kelompok ini kerap diundang mengisi acara di luar desa, bahkan menempuh perjalanan jauh bersama-sama hingga ke Serang dan Pandeglang, sambil membawa nama ",
+        { mark: "Kecamatan Carita" },
+        ".",
+      ],
+      [
+        "Bagi Kang Alek, semua ini adalah soal menjaga apa yang ia sebut ",
+        { mark: "makan tradisi" },
+        ", warisan yang melekat pada identitas warga dan tidak boleh dibiarkan hilang. Harapannya sederhana: memiliki ",
+        { mark: "dua set kendang" },
+        " agar latihan lebih meriah dan dapat menyebar ke RT-RT lain, sehingga regenerasi anak-anak berjalan lebih maksimal.",
+      ],
+      [
+        "“Harapannya supaya meriah lagi, anak-anak itu supaya lebih banyak lagi, jangan sampai putus. Jangan hilang, itu makan tradisi,” ucap Kang Alek.",
       ],
     ],
+    note: "Cerita ini dihimpun dari wawancara dengan Kang Alek, pendiri dan ketua padepokan. Nama lengkap padepokan: Padepokan Bulakan Cibinong 2, 7 Bidadari Pancabuana Alam.",
   },
 ];
 
