@@ -9,6 +9,7 @@ import { EkonomiKehidupan } from "@/components/kenali/EkonomiKehidupan";
 import { ExploreCallout } from "@/components/home/ExploreCallout";
 import heroImage from "../../../public/images/hero/tembong-lanskap.jpg";
 import kebunImage from "../../../public/images/village/kebun-tembong.jpg";
+import gotongRoyongImage from "../../../public/images/kegiatan/gotong-royong-saung.jpg";
 
 export const metadata: Metadata = {
   title: "Kenali Tembong",
@@ -45,6 +46,13 @@ export default function KenaliTembongPage() {
       />
       <DemografiDesa />
       <InfrastrukturDesa />
+      <ImageBand
+        image={gotongRoyongImage}
+        alt="Warga Desa Tembong bergotong royong memindahkan saung bersama-sama."
+        eyebrow="Kehidupan Warga"
+        statement="Di balik data dan wilayahnya, Tembong hidup dari kebersamaan warga yang saling menopang."
+        caption="Gotong royong warga Desa Tembong."
+      />
       <PemerintahanDesa />
       <EkonomiKehidupan />
       <ExploreCallout

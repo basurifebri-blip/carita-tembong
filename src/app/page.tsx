@@ -10,6 +10,8 @@ import { VillageActivities } from "@/components/home/VillageActivities";
 import { HealthHighlight } from "@/components/home/HealthHighlight";
 import { MapPreview } from "@/components/home/MapPreview";
 import { LatestNews } from "@/components/home/LatestNews";
+import { ImageBand } from "@/components/ui/ImageBand";
+import curugBand from "../../public/images/hero/curug-cibanteri.jpg";
 
 /**
  * Homepage acts purely as a discovery/composition layer (IA §7, CLAUDE.md §10).
@@ -23,6 +25,13 @@ export default function HomePage() {
       <VillageIntroduction />
       <DiscoverGrid />
       <VillageStats />
+      <ImageBand
+        image={curugBand}
+        alt="Air terjun Curug Cibanteri mengalir di antara bebatuan dan rimbun pepohonan Desa Tembong."
+        eyebrow="Ruang Alam"
+        statement="Air jernih yang jatuh di antara bebatuan, salah satu sudut alam yang membuat Tembong layak dijelajahi."
+        caption="Curug Cibanteri di Desa Tembong."
+      />
       <FeaturedStories />
       <FeaturedTourism />
       <FeaturedProducts />

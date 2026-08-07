@@ -21,6 +21,8 @@ export type Story = {
   caption: string;
   /** Full narrative, one entry per paragraph. */
   paragraphs: StoryParagraph[];
+  /** Optional in-article photo gallery, shown below the narrative. */
+  gallery?: { image: StaticImageData; alt: string; caption: string }[];
   /** Optional honest note (e.g. documentation still being gathered). */
   note?: string;
 };

@@ -1,7 +1,17 @@
 import type { Story } from "@/types/story";
+import sejarahImage from "../../public/images/hero/tembong-lanskap.jpg";
 import pengajianImage from "../../public/images/galeri/pengajian-masjid-luas.jpg";
-import kampungImage from "../../public/images/galeri/kampung-bilik.jpg";
+import jumatBersihImage from "../../public/images/kegiatan/jumat-bersih-jalan.jpg";
 import silatImage from "../../public/images/galeri/pencak-silat.jpg";
+import kebunTembong from "../../public/images/village/kebun-tembong.jpg";
+import saungTembong from "../../public/images/village/saung-tembong.jpg";
+import kampungBilik from "../../public/images/galeri/kampung-bilik.jpg";
+import grSaung from "../../public/images/kegiatan/gotong-royong-saung.jpg";
+import jbWarga from "../../public/images/kegiatan/jumat-bersih-warga.jpg";
+import grBatu from "../../public/images/kegiatan/gotong-royong-batu.jpg";
+import pengajianLingkaran from "../../public/images/galeri/pengajian-lingkaran.jpg";
+import pengajianKelompok from "../../public/images/galeri/pengajian-kelompok.jpg";
+import masjidInterior from "../../public/images/budaya/masjid-interior.jpg";
 
 /**
  * Editorial stories of Desa Tembong. All facts come from the village (names,
@@ -9,6 +19,76 @@ import silatImage from "../../public/images/galeri/pencak-silat.jpg";
  * /cerita-budaya listing and each /cerita-budaya/[slug] detail page.
  */
 export const stories: Story[] = [
+  {
+    slug: "sejarah-tembong",
+    eyebrow: "Sejarah",
+    category: "Sejarah",
+    title: "Asal Usul Desa Tembong",
+    summary:
+      "Nama Tembong dipercaya lahir dari peristiwa letusan Gunung Krakatau, dan desanya resmi berdiri lewat pemekaran pada tahun 1983.",
+    image: sejarahImage,
+    imageAlt:
+      "Lanskap Desa Tembong dengan kebun kelapa dan pepohonan hijau.",
+    caption: "Lanskap Desa Tembong.",
+    paragraphs: [
+      [
+        "Nama Desa Tembong menyimpan kisah yang lebih tua dari desanya sendiri. Menurut cerita yang diwariskan warga, nama ini berkaitan dengan letusan dahsyat ",
+        { mark: "Gunung Krakatau pada tahun 1883" },
+        ". Dalam bahasa Sunda, ",
+        { mark: "tembong" },
+        " berarti terlihat atau tampak, dan konon daratan inilah yang lebih dulu muncul dan terlihat di antara wilayah sekitarnya. Kisah asal nama ini hidup sebagai tradisi lisan, bukan catatan sejarah yang dapat diverifikasi.",
+      ],
+      [
+        "Sebagai wilayah pemerintahan, Desa Tembong terbentuk pada tahun ",
+        { mark: "1983" },
+        " melalui pemekaran, berpisah dari Banjarmasin. Saat itu wilayahnya masih termasuk dalam ",
+        { mark: "Kecamatan Labuan" },
+        ".",
+      ],
+      [
+        "Perjalanannya berlanjut pada tahun ",
+        { mark: "1995" },
+        ", ketika pemekaran kecamatan menjadikan Tembong bagian dari ",
+        { mark: "Kecamatan Carita" },
+        ", sebagaimana dikenal hingga kini.",
+      ],
+      [
+        "Jejak sejarah juga tampak pada nama kampungnya. Kampung ",
+        { mark: "Kadu Kokosan" },
+        " dahulu dikenal sebagai ",
+        { mark: "Galaya Tonggoh" },
+        " atau Galaya Atas, sebelum kemudian berganti nama seperti yang dikenal warga sekarang.",
+      ],
+      [
+        "Kehidupan keagamaan dan pendidikan turut membentuk wajah desa. Pendidikan agama sudah lama hadir dalam bentuk sekolah madrasah, sebelum ",
+        { mark: "Madrasah Tsanawiyah (MTs)" },
+        " resmi berdiri pada tahun 2008. Di Tembong pula berdiri pesantren yang dirintis oleh ",
+        { mark: "K.H. Hasbullah" },
+        ".",
+      ],
+      [
+        "Dari nama yang lahir bersama peristiwa besar hingga lembaga yang tumbuh di tengah warga, Desa Tembong terus merawat jejak asal-usulnya sebagai bagian dari identitasnya hari ini.",
+      ],
+    ],
+    gallery: [
+      {
+        image: kebunTembong,
+        alt: "Kebun kelapa dan pepohonan hijau di Desa Tembong.",
+        caption: "Kebun dan pepohonan desa",
+      },
+      {
+        image: saungTembong,
+        alt: "Saung bambu tempat warga berkumpul di kawasan kebun Desa Tembong.",
+        caption: "Saung tempat warga berkumpul",
+      },
+      {
+        image: kampungBilik,
+        alt: "Rumah berdinding bilik bambu di sebuah kampung Desa Tembong.",
+        caption: "Rumah bilik di kampung Tembong",
+      },
+    ],
+    note: "Sejarah ini dihimpun dari penuturan warga Desa Tembong. Sebagian di antaranya merupakan tradisi lisan yang diwariskan turun-temurun.",
+  },
   {
     slug: "pengajian-jumat",
     eyebrow: "Keagamaan",
@@ -34,6 +114,23 @@ export const stories: Story[] = [
         "Lebih dari sekadar rutinitas, pengajian Jumat menjadi cara warga menjaga silaturahmi antar kampung. Dengan berpindah tempat, warga ikut singgah ke berbagai masjid desa, dan pertemuan itu merawat tali persaudaraan yang menghubungkan seluruh Tembong.",
       ],
     ],
+    gallery: [
+      {
+        image: pengajianLingkaran,
+        alt: "Warga duduk melingkar dalam pengajian di masjid Desa Tembong.",
+        caption: "Kebersamaan dalam pengajian",
+      },
+      {
+        image: pengajianKelompok,
+        alt: "Warga berkumpul dalam pengajian di masjid Desa Tembong.",
+        caption: "Warga dalam pengajian Jumat",
+      },
+      {
+        image: masjidInterior,
+        alt: "Ruang shalat masjid yang lapang dengan tiang kayu di Desa Tembong.",
+        caption: "Masjid tempat pengajian digelar",
+      },
+    ],
   },
   {
     slug: "jumat-bersih",
@@ -42,10 +139,10 @@ export const stories: Story[] = [
     title: "Menjaga Desa Lewat Jumat Bersih",
     summary:
       "Dari inisiatif warga sendiri, Jumat Bersih menjaga lingkungan kampung sekaligus mempererat gotong royong.",
-    image: kampungImage,
+    image: jumatBersihImage,
     imageAlt:
-      "Rumah-rumah berdinding bilik bambu di sebuah kampung Desa Tembong.",
-    caption: "Salah satu sudut kampung di Desa Tembong.",
+      "Warga bergotong royong membersihkan dan menata jalan kampung dalam kegiatan Jumat Bersih di Desa Tembong.",
+    caption: "Warga bergotong royong dalam Jumat Bersih.",
     paragraphs: [
       [
         "Pada Jumat pagi, sebagian warga Tembong turun bersama membersihkan lingkungan kampung. Kegiatan Jumat Bersih ini tumbuh dari inisiatif warga sendiri dan digerakkan oleh Kepala Desa, ",
@@ -56,7 +153,23 @@ export const stories: Story[] = [
         "Tujuannya sederhana namun penting: menjaga lingkungan kampung tetap bersih, sekaligus mempererat tali persaudaraan antar warga melalui gotong royong.",
       ],
     ],
-    note: "Dokumentasi foto kegiatan ini masih dikumpulkan dan akan ditambahkan di sini.",
+    gallery: [
+      {
+        image: grSaung,
+        alt: "Warga bergotong royong memindahkan saung bersama-sama di Desa Tembong.",
+        caption: "Memindahkan saung bersama",
+      },
+      {
+        image: jbWarga,
+        alt: "Warga membersihkan tepi jalan desa dalam kegiatan Jumat Bersih.",
+        caption: "Membersihkan tepi jalan desa",
+      },
+      {
+        image: grBatu,
+        alt: "Warga menata batu di jalan kampung Desa Tembong.",
+        caption: "Menata jalan kampung",
+      },
+    ],
   },
   {
     slug: "pencak-silat",

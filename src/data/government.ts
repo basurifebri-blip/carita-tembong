@@ -1,4 +1,6 @@
 import type { Official, OrgGroup } from "@/types/village";
+import adangKosasih from "../../public/images/pemerintahan/adang-kosasih.png";
+import adlah from "../../public/images/pemerintahan/adlah.png";
 
 /**
  * Village government structure for Desa Tembong.
@@ -18,6 +20,9 @@ export const governmentSource =
 export const kepalaDesa: Official = {
   name: "Adang Kosasih, S.Pd",
   role: "Kepala Desa",
+  image: adangKosasih,
+  imageAlt:
+    "Foto resmi Adang Kosasih, S.Pd, Kepala Desa Tembong, mengenakan seragam dinas.",
 };
 
 export const sekretarisDesa: Official = {
@@ -80,6 +85,14 @@ export const institutions: OrgGroup[] = [
   },
   {
     title: "TP PKK",
-    members: [{ name: "Adlah, S.Pd", role: "Ketua" }],
+    members: [
+      {
+        name: "Adlah, S.Pd",
+        role: "Ketua",
+        image: adlah,
+        imageAlt:
+          "Foto resmi Adlah, S.Pd, Ketua Tim Penggerak PKK Desa Tembong.",
+      },
+    ],
   },
 ];

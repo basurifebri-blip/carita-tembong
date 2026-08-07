@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
+import Image from "next/image";
 import { Container } from "@/components/ui/Container";
 import { PageHero } from "@/components/ui/PageHero";
 import { SectionTitle } from "@/components/ui/SectionTitle";
@@ -107,7 +108,33 @@ export default async function StoryDetailPage({
           {story.note && (
             <p className="mt-6 text-sm text-secondary/80">{story.note}</p>
           )}
+        </Container>
 
+        {story.gallery && story.gallery.length > 0 && (
+          <Container className="mt-12">
+            <Reveal className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+              {story.gallery.map((item) => (
+                <figure key={item.caption}>
+                  <div className="relative aspect-[4/3] overflow-hidden rounded-xl border border-soft shadow-card">
+                    <Image
+                      src={item.image}
+                      alt={item.alt}
+                      fill
+                      placeholder="blur"
+                      sizes="(min-width: 1024px) 22rem, (min-width: 640px) 45vw, 100vw"
+                      className="object-cover"
+                    />
+                  </div>
+                  <figcaption className="mt-3 text-sm text-secondary">
+                    {item.caption}
+                  </figcaption>
+                </figure>
+              ))}
+            </Reveal>
+          </Container>
+        )}
+
+        <Container width="reading">
           <div className="mt-12 border-t border-soft pt-8">
             <Button href="/cerita-budaya" variant="secondary" withArrow>
               Kembali ke Cerita &amp; Budaya

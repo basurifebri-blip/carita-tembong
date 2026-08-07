@@ -1,11 +1,19 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { Container } from "@/components/ui/Container";
 import { SectionTitle } from "@/components/ui/SectionTitle";
 import { PageHero } from "@/components/ui/PageHero";
 import { Reveal } from "@/components/ui/Reveal";
-import { Button } from "@/components/ui/Button";
 import { ExploreCallout } from "@/components/home/ExploreCallout";
-import heroImage from "../../../public/images/hero/tembong-lanskap.jpg";
+import heroImage from "../../../public/images/kegiatan/gotong-royong-saung.jpg";
+import grBangun from "../../../public/images/kegiatan/gotong-royong-bangun.jpg";
+import grJalan from "../../../public/images/kegiatan/gotong-royong-jalan.jpg";
+import grKonstruksi from "../../../public/images/kegiatan/gotong-royong-konstruksi.jpg";
+import jbWarga from "../../../public/images/kegiatan/jumat-bersih-warga.jpg";
+import umbulUmbul from "../../../public/images/kegiatan/kampung-umbul-umbul.jpg";
+import bankSampah from "../../../public/images/kegiatan/bank-sampah.jpg";
+import bankSampahWarga from "../../../public/images/kegiatan/bank-sampah-warga.jpg";
+import hariJadi from "../../../public/images/kegiatan/hari-jadi-desa.jpg";
 
 export const metadata: Metadata = {
   title: "Kegiatan",
@@ -46,6 +54,49 @@ const kegiatan = [
   },
 ];
 
+const dokumentasi = [
+  {
+    image: jbWarga,
+    alt: "Warga membersihkan tepi jalan desa dalam kegiatan Jumat Bersih di Desa Tembong.",
+    caption: "Membersihkan tepi jalan desa",
+  },
+  {
+    image: grJalan,
+    alt: "Warga dan anak muda menata batu di jalan kampung Desa Tembong.",
+    caption: "Menata jalan kampung bersama",
+  },
+  {
+    image: grBangun,
+    alt: "Warga bergotong royong memperbaiki bangunan berdinding bilik di Desa Tembong.",
+    caption: "Memperbaiki bangunan warga",
+  },
+  {
+    image: grKonstruksi,
+    alt: "Warga bergotong royong dalam pembangunan di kampung Desa Tembong.",
+    caption: "Gotong royong pembangunan",
+  },
+  {
+    image: umbulUmbul,
+    alt: "Jalan kampung Desa Tembong berhias umbul-umbul menyambut hari besar desa.",
+    caption: "Kampung berhias saat hari besar desa",
+  },
+  {
+    image: bankSampah,
+    alt: "Warga muda mengelola Posko Bank Sampah Gerai Mandiri di Kampung Tembol, Desa Tembong.",
+    caption: "Bank Sampah Gerai Mandiri, Kp. Tembol",
+  },
+  {
+    image: bankSampahWarga,
+    alt: "Warga memilah sampah di posko Bank Sampah Desa Tembong.",
+    caption: "Memilah sampah di bank sampah desa",
+  },
+  {
+    image: hariJadi,
+    alt: "Penampilan seni pada peringatan Hari Jadi Desa Tembong ke-36.",
+    caption: "Hari Jadi Desa Tembong ke-36",
+  },
+];
+
 export default function KegiatanPage() {
   return (
     <>
@@ -54,7 +105,7 @@ export default function KegiatanPage() {
         title="Denyut Keseharian Desa"
         description="Tembong bergerak setiap pekan. Dari membersihkan lingkungan hingga menjaga tradisi, kegiatan warga menjadi tanda desa yang hidup."
         image={heroImage}
-        imageAlt="Lanskap dan permukiman Desa Tembong di antara kebun dan pepohonan."
+        imageAlt="Warga Desa Tembong bergotong royong memindahkan saung bersama-sama."
         breadcrumb={[
           { label: "Beranda", href: "/" },
           { label: "Kegiatan" },
@@ -91,36 +142,29 @@ export default function KegiatanPage() {
 
       <section className="section bg-surface-muted">
         <Container>
-          <SectionTitle eyebrow="Agenda" title="Jadwal dan Dokumentasi Kegiatan" />
-          <Reveal className="mt-8">
-            <div className="flex flex-col items-center gap-5 rounded-xl border border-dashed border-soft bg-surface px-6 py-14 text-center">
-              <span
-                aria-hidden="true"
-                className="flex h-14 w-14 items-center justify-center rounded-full bg-surface-muted text-cultural"
-              >
-                <svg
-                  width="26"
-                  height="26"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="1.6"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                >
-                  <rect x="3.5" y="5" width="17" height="15" rx="2" />
-                  <path d="M3.5 9.5h17M8 3.5v3M16 3.5v3M7.5 13h3M13.5 13h3M7.5 16.5h3" />
-                </svg>
-              </span>
-              <p className="max-w-md text-secondary">
-                Agenda kegiatan mendatang dan dokumentasi pelaksanaannya akan
-                muncul di sini secara otomatis setelah portal terhubung dengan
-                CMS desa.
-              </p>
-              <Button href="/kabar-tembong" variant="secondary" withArrow>
-                Kabar Tembong
-              </Button>
-            </div>
+          <SectionTitle
+            eyebrow="Dokumentasi"
+            title="Kegiatan yang Terekam"
+            description="Sejumlah momen gotong royong dan kegiatan warga yang menghidupkan Desa Tembong."
+          />
+          <Reveal className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {dokumentasi.map((item) => (
+              <figure key={item.caption}>
+                <div className="relative aspect-[4/3] overflow-hidden rounded-xl border border-soft shadow-card">
+                  <Image
+                    src={item.image}
+                    alt={item.alt}
+                    fill
+                    placeholder="blur"
+                    sizes="(min-width: 1024px) 22rem, (min-width: 640px) 45vw, 100vw"
+                    className="object-cover"
+                  />
+                </div>
+                <figcaption className="mt-3 text-sm text-secondary">
+                  {item.caption}
+                </figcaption>
+              </figure>
+            ))}
           </Reveal>
         </Container>
       </section>

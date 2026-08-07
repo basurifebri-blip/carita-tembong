@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { Container } from "@/components/ui/Container";
 import { SectionTitle } from "@/components/ui/SectionTitle";
 import {
@@ -11,13 +12,30 @@ import type { Official, OrgGroup } from "@/types/village";
 
 function LeadCard({ person }: { person: Official }) {
   return (
-    <div className="rounded-xl border border-soft bg-surface p-6 shadow-card">
-      <p className="text-xs font-semibold uppercase tracking-[0.14em] text-cultural">
-        {person.role}
-      </p>
-      <p className="mt-2 font-display text-xl font-semibold text-brand">
-        {person.name}
-      </p>
+    <div className="flex items-center gap-5 rounded-xl border border-soft bg-surface p-6 shadow-card">
+      {person.image && (
+        <div className="relative h-28 w-24 shrink-0 overflow-hidden rounded-lg border border-soft bg-surface-muted">
+          <Image
+            src={person.image}
+            alt={
+              person.imageAlt ??
+              `Foto ${person.name}, ${person.role} Desa Tembong.`
+            }
+            fill
+            placeholder="blur"
+            sizes="6rem"
+            className="object-cover object-top"
+          />
+        </div>
+      )}
+      <div>
+        <p className="text-xs font-semibold uppercase tracking-[0.14em] text-cultural">
+          {person.role}
+        </p>
+        <p className="mt-2 font-display text-xl font-semibold text-brand">
+          {person.name}
+        </p>
+      </div>
     </div>
   );
 }
@@ -30,12 +48,29 @@ function OrgCard({ group }: { group: OrgGroup }) {
         {group.members.map((member) => (
           <li
             key={`${member.name}-${member.role}`}
-            className="flex flex-col gap-0.5 py-3 first:pt-0 last:pb-0"
+            className="flex items-center gap-3 py-3 first:pt-0 last:pb-0"
           >
-            <span className="text-sm font-semibold text-primary">
-              {member.name}
-            </span>
-            <span className="text-xs text-secondary">{member.role}</span>
+            {member.image && (
+              <div className="relative h-14 w-12 shrink-0 overflow-hidden rounded-md border border-soft bg-surface-muted">
+                <Image
+                  src={member.image}
+                  alt={
+                    member.imageAlt ??
+                    `Foto ${member.name}, ${member.role} Desa Tembong.`
+                  }
+                  fill
+                  placeholder="blur"
+                  sizes="3rem"
+                  className="object-cover object-top"
+                />
+              </div>
+            )}
+            <div className="flex flex-col gap-0.5">
+              <span className="text-sm font-semibold text-primary">
+                {member.name}
+              </span>
+              <span className="text-xs text-secondary">{member.role}</span>
+            </div>
           </li>
         ))}
       </ul>

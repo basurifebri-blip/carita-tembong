@@ -4,6 +4,8 @@
  * presentation). Data files satisfy these types; components consume them.
  */
 
+import type { StaticImageData } from "next/image";
+
 export type Stat = {
   value: string;
   unit?: string;
@@ -24,6 +26,9 @@ export type Boundary = {
 export type Official = {
   name: string;
   role: string;
+  /** Optional official portrait (public figures only, with consent). */
+  image?: StaticImageData;
+  imageAlt?: string;
 };
 
 export type OrgGroup = {
