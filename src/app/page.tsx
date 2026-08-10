@@ -13,6 +13,10 @@ import { LatestNews } from "@/components/home/LatestNews";
 import { ImageBand } from "@/components/ui/ImageBand";
 import curugBand from "../../public/images/hero/curug-cibanteri.jpg";
 
+// Keep the homepage news teaser fresh even though the surrounding village
+// content is largely static. This matches the CMS cache interval on Vercel.
+export const revalidate = 300;
+
 /**
  * Homepage acts purely as a discovery/composition layer (IA §7, CLAUDE.md §10).
  * HeroSection and VillageIntroduction are fully implemented; the remaining

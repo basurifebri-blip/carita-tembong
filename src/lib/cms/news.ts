@@ -9,17 +9,10 @@ import { mapWpPost, mapWpPostDetail, type WpPost } from "./map";
  * static build never breaks.
  */
 export async function getLatestNews(limit = 3): Promise<NewsArticle[]> {
-  if (!isCmsEnabled) return [];
-
-  try {
-    const posts = await wpFetch<WpPost[]>(
-      `/wp/v2/${NEWS_POST_TYPE}?per_page=${limit}&_embed`,
-    );
-    return Array.isArray(posts) ? posts.map(mapWpPost) : [];
-  } catch (error) {
-    console.error("[cms] getLatestNews failed:", error);
-    return [];
-  }
+  // Reuse the same request as the archive so the homepage and /kabar-tembong
+  // cannot diverge because of separate WordPress data-cache entries.
+  const news = await getAllNews();
+  return news.slice(0, limit);
 }
 
 /**

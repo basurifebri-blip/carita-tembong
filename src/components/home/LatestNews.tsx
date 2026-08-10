@@ -9,7 +9,7 @@ export function LatestNews() {
     <BeritaTerbaru
       eyebrow="Kabar Tembong"
       title="Perkembangan Terbaru dari Desa"
-      description="Berita dan kabar terbaru akan otomatis muncul di sini setelah portal terhubung ke CMS desa."
+      description="Tiga kabar terbaru dari Desa Tembong, diperbarui otomatis dari CMS desa."
       limit={3}
       tone="surface"
       cta={{ label: "Lihat Kabar Tembong", href: "/kabar-tembong" }}
