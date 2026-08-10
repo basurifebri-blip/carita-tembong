@@ -64,7 +64,10 @@ export default async function ProductDetailPage({
     image: [product.heroImage.src],
     category: product.tag,
     url: pageUrl,
-    brand: { "@type": "Organization", name: siteConfig.name },
+    brand: {
+      "@type": "Brand",
+      name: product.brand ?? siteConfig.name,
+    },
   };
 
   const breadcrumbLd = {
@@ -110,8 +113,51 @@ export default async function ProductDetailPage({
             </div>
             <aside className="lg:pt-2">
               <KontakPemesanan product={product} />
+
+              {product.businessFacts && product.businessFacts.length > 0 && (
+                <div className="mt-6 rounded-xl border border-soft bg-surface-muted p-6">
+                  <h3 className="font-display text-xl font-semibold text-brand">
+                    Profil Usaha
+                  </h3>
+                  <dl className="mt-4 flex flex-col gap-3 text-sm">
+                    {product.businessFacts.map((fact) => (
+                      <div key={fact.label}>
+                        <dt className="text-secondary">{fact.label}</dt>
+                        <dd className="font-medium text-primary">{fact.value}</dd>
+                      </div>
+                    ))}
+                  </dl>
+                </div>
+              )}
             </aside>
           </Reveal>
+
+          {(product.prices || product.variants) && (
+            <Reveal className="mt-10 rounded-xl border border-soft bg-surface-clay p-6 sm:p-8">
+              <h2 className="font-display text-2xl font-semibold text-brand">
+                Harga &amp; Varian
+              </h2>
+              {product.prices && (
+                <dl className="mt-5 grid gap-4 sm:grid-cols-3">
+                  {product.prices.map((price) => (
+                    <div key={price.label}>
+                      <dt className="text-sm text-secondary">{price.label}</dt>
+                      <dd className="mt-1 font-semibold text-primary">{price.value}</dd>
+                    </div>
+                  ))}
+                </dl>
+              )}
+              {product.variants && (
+                <p className="mt-5 text-sm text-secondary">
+                  Varian rasa: {product.variants.join(", ")}.
+                </p>
+              )}
+              <p className="mt-3 text-xs text-secondary">
+                Harga merupakan informasi saat pendataan dan dapat berubah mengikuti
+                ketersediaan bahan baku serta jumlah pesanan.
+              </p>
+            </Reveal>
+          )}
 
           <Reveal className="mt-10">
             <ProcessStrip label="Tahap Pembuatan" steps={product.steps} />

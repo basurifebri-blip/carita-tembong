@@ -10,6 +10,9 @@ import opakGiling from "../../public/images/galeri/opak-giling.jpg";
 import opakKukus from "../../public/images/galeri/opak-kukus.jpg";
 import opakAdonan from "../../public/images/galeri/opak-adonan.jpg";
 import opakCetak from "../../public/images/galeri/opak-cetak.jpg";
+import barokahOpak from "../../public/images/umkm/barokah/opak-singkong-barokah.png";
+import barokahEmpingManis from "../../public/images/umkm/barokah/emping-barokah-manis.png";
+import barokahEmpingOriginal from "../../public/images/umkm/barokah/emping-barokah-original.png";
 
 /**
  * Local UMKM products of Desa Tembong, story-first (CLAUDE.md §25). Facts come
@@ -17,6 +20,84 @@ import opakCetak from "../../public/images/galeri/opak-cetak.jpg";
  * so the detail page shows an honest fallback rather than a fake link.
  */
 export const products: Product[] = [
+  {
+    slug: "emping-opak-barokah",
+    name: "Emping & Opak Barokah",
+    tag: "UMKM Tembong",
+    brand: "Barokah",
+    summary:
+      "Usaha rumahan Ibu Siti Aminah yang menghadirkan emping melinjo dan opak singkong bercita rasa khas Carita, dengan bahan mentah yang dihimpun dari pengrajin Salabarang dan Galaya.",
+    cardImage: barokahEmpingManis,
+    cardAlt:
+      "Emping Barokah produksi Ibu Siti Aminah dalam kemasan bersama emping siap santap.",
+    heroImage: barokahEmpingOriginal,
+    heroAlt:
+      "Emping Barokah rasa original produksi Ibu Siti Aminah di Desa Tembong, Carita.",
+    storyTitle: "Dari Pengrajin Desa ke Pasar Antarkota",
+    story: [
+      [
+        "Ibu Siti Aminah mengembangkan merek ",
+        { mark: "Emping & Opak Barokah" },
+        " dari dapur produksi rumahan di Desa Tembong. Emping dan opak mentah dibeli dari para pengrajin di ",
+        { mark: "Salabarang dan Galaya" },
+        ", kemudian diolah, diberi pilihan rasa, dikemas, dan dipasarkan.",
+      ],
+      [
+        "Keunggulannya terletak pada rasa yang membawa ciri khas Carita. Produk ini telah dikirim hingga ",
+        { mark: "Bogor, Jakarta, dan sejumlah kota lain" },
+        ", baik untuk camilan maupun oleh-oleh.",
+      ],
+      [
+        "Usaha ini telah memiliki ",
+        { mark: "sertifikat Halal dan PIRT" },
+        ". Dalam memenuhi pesanan tertentu, kapasitas produksinya dapat mencapai ",
+        { mark: "1 ton" },
+        ", menyesuaikan permintaan pasar.",
+      ],
+      [
+        "Ketersediaan buah melinjo menjadi tantangan utama. Ketika pasokan melinjo di pasar berkurang, harga bahan baku dan harga emping ikut berubah.",
+      ],
+    ],
+    steps: [
+      "Pengrajin desa",
+      "Bahan mentah",
+      "Sortir",
+      "Pengolahan rasa",
+      "Pengemasan",
+      "Distribusi",
+    ],
+    gallery: [
+      {
+        image: barokahOpak,
+        alt: "Opak Singkong Barokah produksi Ibu Siti Aminah dalam kemasan dan tersaji di piring.",
+        caption: "Opak Singkong Barokah",
+      },
+      {
+        image: barokahEmpingManis,
+        alt: "Emping Barokah bercita rasa gurih manis dalam kemasan dan tersaji di piring.",
+        caption: "Emping Barokah varian rasa",
+      },
+      {
+        image: barokahEmpingOriginal,
+        alt: "Emping Barokah rasa original dalam kemasan dan tersaji di piring.",
+        caption: "Emping Barokah rasa original",
+      },
+    ],
+    businessFacts: [
+      { label: "Produsen", value: "Ibu Siti Aminah" },
+      { label: "Dapur produksi", value: "Rumahan di Desa Tembong" },
+      { label: "Mitra pengrajin", value: "Salabarang dan Galaya" },
+      { label: "Perizinan", value: "Sertifikat Halal dan PIRT" },
+      { label: "Kapasitas", value: "Hingga 1 ton sesuai permintaan" },
+      { label: "Jangkauan", value: "Bogor, Jakarta, dan kota lainnya" },
+    ],
+    prices: [
+      { label: "Kemasan eceran", value: "Mulai Rp10.000" },
+      { label: "Emping melinjo", value: "Rp60.000–Rp70.000/kg" },
+      { label: "Opak singkong", value: "Rp30.000/kg" },
+    ],
+    variants: ["Original", "Balado", "Pedas manis"],
+  },
   {
     slug: "emping-melinjo",
     name: "Emping Melinjo",

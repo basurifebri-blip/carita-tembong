@@ -12,6 +12,8 @@ export type Product = {
   name: string;
   /** Badge label, e.g. "Produk Unggulan". */
   tag: string;
+  /** Named product brand, when the entry represents a specific business. */
+  brand?: string;
   /** Short description for cards and metadata. */
   summary: string;
   /** Image for the listing card. */
@@ -27,6 +29,12 @@ export type Product = {
   steps: string[];
   /** Process photos on the detail page. */
   gallery: ProductPhoto[];
+  /** Optional profile facts for a named local business or brand. */
+  businessFacts?: { label: string; value: string }[];
+  /** Optional price information; always presented as subject to change. */
+  prices?: { label: string; value: string }[];
+  /** Product flavours or variants confirmed by the maker or packaging. */
+  variants?: string[];
   /**
    * Marketing-partner WhatsApp contact. Present ONLY when verified + consented
    * (CLAUDE.md §56-57); otherwise the detail page shows an honest fallback.
