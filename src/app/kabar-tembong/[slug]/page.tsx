@@ -59,6 +59,7 @@ export default async function KabarDetailPage({
   const pageUrl = siteUrl
     ? `${siteUrl}/kabar-tembong/${article.slug}`
     : undefined;
+  const hasHeroImage = Boolean(article.imageUrl);
 
   const jsonLd = {
     "@context": "https://schema.org",
@@ -104,21 +105,49 @@ export default async function KabarDetailPage({
 
   return (
     <article>
-      <header className="relative overflow-hidden bg-surface-muted">
-        <BambooPattern className="text-decorative" opacity={0.05} />
-        <Container width="reading" className="relative py-12 md:py-16">
+      <header
+        className={`relative overflow-hidden ${
+          hasHeroImage ? "bg-brand-deep" : "bg-surface-muted"
+        }`}
+      >
+        {article.imageUrl && (
+          <div className="absolute inset-0">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src={article.imageUrl}
+              alt=""
+              aria-hidden="true"
+              className="h-full w-full object-cover"
+            />
+            <div className="absolute inset-0 bg-brand-deep/75" />
+          </div>
+        )}
+        <BambooPattern
+          className={hasHeroImage ? "text-white" : "text-decorative"}
+          opacity={hasHeroImage ? 0.06 : 0.05}
+        />
+        <Container width="reading" className="relative z-10 py-12 md:py-16">
           <Breadcrumb
             items={[
               { label: "Beranda", href: "/" },
               { label: "Kabar Tembong", href: "/kabar-tembong" },
               { label: article.title },
             ]}
+            variant={hasHeroImage ? "onDark" : "default"}
             className="mb-6"
           />
-          <div className="flex flex-wrap items-center gap-x-2 gap-y-1 text-sm text-secondary">
+          <div
+            className={`flex flex-wrap items-center gap-x-2 gap-y-1 text-sm ${
+              hasHeroImage ? "text-white/80" : "text-secondary"
+            }`}
+          >
             {article.category && (
               <>
-                <span className="font-semibold text-cultural">
+                <span
+                  className={`font-semibold ${
+                    hasHeroImage ? "text-decorative" : "text-cultural"
+                  }`}
+                >
                   {article.category}
                 </span>
                 <span aria-hidden="true">·</span>
@@ -128,23 +157,22 @@ export default async function KabarDetailPage({
               <time dateTime={article.date}>{article.dateLabel}</time>
             )}
           </div>
-          <h1 className="type-h1 mt-3 text-brand">{article.title}</h1>
+          <h1 className={`type-h1 mt-3 ${hasHeroImage ? "text-white" : "text-brand"}`}>
+            {article.title}
+          </h1>
           {article.excerpt && (
-            <p className="type-lead mt-5 text-secondary">{article.excerpt}</p>
+            <p
+              className={`type-lead mt-5 ${
+                hasHeroImage ? "text-white/90" : "text-secondary"
+              }`}
+            >
+              {article.excerpt}
+            </p>
           )}
         </Container>
       </header>
 
       <Container width="reading" className="py-12 md:py-16">
-        {article.imageUrl && (
-          // eslint-disable-next-line @next/next/no-img-element
-          <img
-            src={article.imageUrl}
-            alt={article.imageAlt ?? article.title}
-            className="mb-10 aspect-[16/9] w-full rounded-xl border border-soft object-cover"
-          />
-        )}
-
         {/* Trusted HTML from the village CMS (WordPress content.rendered). */}
         <div
           className="article-body"
