@@ -135,7 +135,7 @@ export const mapPoints: MapPoint[] = [
     id: "embung-desa",
     name: "Embung Desa",
     category: "wisata",
-    coordinates: null, // TODO: [lat, lng] terverifikasi
+    coordinates: [-6.331699161539687, 105.8503155191289],
     status: "Potensial Dikembangkan",
     description: "Tampungan air bagi ladang dan kehidupan warga.",
     href: "/jelajahi-tembong/embung-desa",
