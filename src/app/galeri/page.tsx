@@ -44,7 +44,7 @@ import masjidBedug from "../../../public/images/budaya/masjid-bedug.jpg";
 export const metadata: Metadata = {
   title: "Galeri Tembong",
   description:
-    "Galeri foto Desa Tembong: alam, budaya, kehidupan warga, produk UMKM, dan layanan kesehatan, dari Curug Cibanteri hingga masjid, Posyandu, dan penjemuran emping.",
+    "Galeri foto Desa Tembong: lanskap sawah, alam, budaya, kehidupan warga, produk UMKM, dan layanan kesehatan.",
 };
 
 type GalleryItem = {
