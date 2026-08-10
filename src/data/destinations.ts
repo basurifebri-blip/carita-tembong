@@ -29,7 +29,13 @@ export const destinations: Destination[] = [
     status: "Potensial Dikembangkan",
     image: embungImg,
     summary:
-      "Tampungan air yang menjadi cadangan bagi ladang dan kehidupan warga. Dikelilingi kebun dan pepohonan, Embung Desa menyimpan potensi untuk tumbuh menjadi ruang publik yang menyatu dengan alam.",
+      "Tampungan air yang menjadi cadangan bagi ladang dan kehidupan warga. Saat ini Embung Desa dalam kondisi kering dan belum dapat dinikmati sebagai tujuan wisata air.",
+    story: [
+      "Menurut penuturan warga, pada 2024 Embung Desa masih tampak bagus dan menjadi salah satu tempat yang ramai dikunjungi. Dikelilingi kebun dan pepohonan, kawasan ini menyimpan potensi untuk kembali tumbuh sebagai ruang publik yang menyatu dengan alam.",
+      "Kondisi embung dapat berubah mengikuti musim, ketersediaan air, dan perawatan di lokasi. Informasi pembaruan akan ditambahkan setelah ada verifikasi lanjutan bersama warga dan pemerintah desa.",
+    ],
+    note:
+      "Keterangan kondisi terkini dan kondisi pada 2024 dihimpun dari informasi warga Desa Tembong.",
   },
   {
     slug: "bulakan-ciherang",
