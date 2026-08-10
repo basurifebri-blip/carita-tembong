@@ -160,15 +160,6 @@ export default async function KabarDetailPage({
           <h1 className={`type-h1 mt-3 ${hasHeroImage ? "text-white" : "text-brand"}`}>
             {article.title}
           </h1>
-          {article.excerpt && (
-            <p
-              className={`type-lead mt-5 ${
-                hasHeroImage ? "text-white/90" : "text-secondary"
-              }`}
-            >
-              {article.excerpt}
-            </p>
-          )}
         </Container>
       </header>
 
