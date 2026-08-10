@@ -97,6 +97,10 @@ export const products: Product[] = [
       { label: "Opak singkong", value: "Rp30.000/kg" },
     ],
     variants: ["Original", "Balado", "Pedas manis"],
+    contact: {
+      name: "Ibu Siti Aminah",
+      whatsapp: "+62 838-4487-4847",
+    },
   },
   {
     slug: "emping-melinjo",
@@ -157,6 +161,10 @@ export const products: Product[] = [
         caption: "Pengrajin dan para-para jemurannya",
       },
     ],
+    contact: {
+      name: "Kang Hendrik Galaya",
+      whatsapp: "+62 819-5351-1988",
+    },
   },
   {
     slug: "opak",
