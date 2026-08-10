@@ -1,6 +1,7 @@
 import type { Destination } from "@/types/tourism";
 import curugImg from "../../public/images/hero/curug-cibanteri.jpg";
 import bulakanImg from "../../public/images/wisata/bulakan-ciherang.jpg";
+import embungImg from "../../public/images/wisata/Embung Desa.png";
 
 /**
  * Documented tourism potential of Desa Tembong.
@@ -26,8 +27,9 @@ export const destinations: Destination[] = [
     name: "Embung Desa",
     category: "Embung",
     status: "Potensial Dikembangkan",
+    image: embungImg,
     summary:
-      "Tampungan air yang menjadi cadangan bagi ladang dan kehidupan warga. Embung Desa menyimpan potensi untuk tumbuh menjadi ruang publik yang menyatu dengan alam. Dokumentasi lengkapnya akan menyusul.",
+      "Tampungan air yang menjadi cadangan bagi ladang dan kehidupan warga. Dikelilingi kebun dan pepohonan, Embung Desa menyimpan potensi untuk tumbuh menjadi ruang publik yang menyatu dengan alam.",
   },
   {
     slug: "bulakan-ciherang",

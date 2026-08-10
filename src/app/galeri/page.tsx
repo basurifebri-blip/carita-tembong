@@ -9,6 +9,7 @@ import lanskap from "../../../public/images/hero/tembong-lanskap.jpg";
 import curugCibanteri from "../../../public/images/hero/curug-cibanteri.jpg";
 import aliranSungai from "../../../public/images/wisata/aliran-sungai.jpg";
 import bulakan from "../../../public/images/wisata/bulakan-ciherang.jpg";
+import embungDesa from "../../../public/images/wisata/Embung Desa.png";
 import kebun from "../../../public/images/village/kebun-tembong.jpg";
 import saung from "../../../public/images/village/saung-tembong.jpg";
 import curugKolam from "../../../public/images/galeri/curug-kolam.jpg";
@@ -54,6 +55,7 @@ type GalleryItem = {
 
 const galeri: GalleryItem[] = [
   { src: curugCibanteri, alt: "Curug Cibanteri dengan langit cerah di Desa Tembong.", caption: "Curug Cibanteri", category: "Alam" },
+  { src: embungDesa, alt: "Embung Desa Tembong dengan tampungan air di tengah kebun dan pepohonan.", caption: "Embung Desa Tembong", category: "Alam" },
   { src: masjidMihrab, alt: "Mihrab berhias lengkung keemasan dengan karpet merah di sebuah masjid Desa Tembong.", caption: "Mihrab masjid desa", category: "Budaya" },
   { src: kunjunganWamenkes, alt: "Rombongan Wakil Menteri Kesehatan RI dan para kader kesehatan saat kunjungan ke Desa Tembong.", caption: "Kunjungan Wakil Menteri Kesehatan ke Tembong", category: "Kesehatan" },
   { src: empingJemurTerpal, alt: "Ribuan lembar emping melinjo dijemur di atas terpal biru di halaman warga.", caption: "Emping dijemur di halaman warga", category: "UMKM" },
