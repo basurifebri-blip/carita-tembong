@@ -6,6 +6,7 @@ import { GalleryLightbox } from "@/components/gallery/GalleryLightbox";
 import { ExploreCallout } from "@/components/home/ExploreCallout";
 
 import lanskap from "../../../public/images/hero/tembong-lanskap.jpg";
+import galeriHero from "../../../public/images/hero/galeri-hero.jpg";
 import curugCibanteri from "../../../public/images/hero/curug-cibanteri.jpg";
 import aliranSungai from "../../../public/images/wisata/aliran-sungai.jpg";
 import bulakan from "../../../public/images/wisata/bulakan-ciherang.jpg";
@@ -97,8 +98,8 @@ export default function GaleriPage() {
         eyebrow="Galeri"
         title="Galeri Tembong"
         description="Wajah Desa Tembong lewat foto: alam, budaya, kehidupan warga, produk UMKM, dan layanan kesehatan. Saring galeri sesuai tema yang ingin Anda telusuri."
-        image={lanskap}
-        imageAlt="Lanskap Desa Tembong dengan kebun kelapa dan saung."
+        image={galeriHero}
+        imageAlt="Hamparan sawah hijau dengan pepohonan kelapa di Desa Tembong."
         breadcrumb={[{ label: "Beranda", href: "/" }, { label: "Galeri" }]}
       />
 
