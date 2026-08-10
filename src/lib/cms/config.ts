@@ -3,7 +3,8 @@
  *
  * The whole CMS layer is optional: with no WORDPRESS_API_URL set, service
  * functions short-circuit to empty results and the site renders its built-in
- * placeholders (so the static build never depends on a live WordPress).
+ * placeholders. Once configured, WordPress errors are surfaced so ISR can
+ * retain the last successful content instead of caching a false empty state.
  */
 
 /** Base REST URL, e.g. https://cms.example.id/wp-json (no trailing slash). */

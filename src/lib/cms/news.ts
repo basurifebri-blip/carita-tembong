@@ -4,9 +4,9 @@ import { wpFetch } from "./client";
 import { mapWpPost, mapWpPostDetail, type WpPost } from "./map";
 
 /**
- * Latest news, newest first. Returns an empty array when the CMS is not yet
- * configured or a request fails, so callers can render a placeholder and the
- * static build never breaks.
+ * Latest news, newest first. Returns an empty array only when the CMS is not
+ * configured; configured CMS failures are allowed to throw so ISR preserves
+ * the last successful page instead of caching a false empty state.
  */
 export async function getLatestNews(limit = 3): Promise<NewsArticle[]> {
   // Reuse the same request as the archive so the homepage and /kabar-tembong
@@ -22,15 +22,10 @@ export async function getLatestNews(limit = 3): Promise<NewsArticle[]> {
 export async function getAllNews(limit = 100): Promise<NewsArticle[]> {
   if (!isCmsEnabled) return [];
 
-  try {
-    const posts = await wpFetch<WpPost[]>(
-      `/wp/v2/${NEWS_POST_TYPE}?per_page=${limit}&orderby=date&order=desc&_embed`,
-    );
-    return Array.isArray(posts) ? posts.map(mapWpPost) : [];
-  } catch (error) {
-    console.error("[cms] getAllNews failed:", error);
-    return [];
-  }
+  const posts = await wpFetch<WpPost[]>(
+    `/wp/v2/${NEWS_POST_TYPE}?per_page=${limit}&orderby=date&order=desc&_embed`,
+  );
+  return Array.isArray(posts) ? posts.map(mapWpPost) : [];
 }
 
 /**
@@ -43,14 +38,9 @@ export async function getNewsBySlug(
 ): Promise<NewsArticleDetail | null> {
   if (!isCmsEnabled) return null;
 
-  try {
-    const posts = await wpFetch<WpPost[]>(
-      `/wp/v2/${NEWS_POST_TYPE}?slug=${encodeURIComponent(slug)}&_embed`,
-    );
-    const post = Array.isArray(posts) ? posts[0] : undefined;
-    return post ? mapWpPostDetail(post) : null;
-  } catch (error) {
-    console.error(`[cms] getNewsBySlug(${slug}) failed:`, error);
-    return null;
-  }
+  const posts = await wpFetch<WpPost[]>(
+    `/wp/v2/${NEWS_POST_TYPE}?slug=${encodeURIComponent(slug)}&_embed`,
+  );
+  const post = Array.isArray(posts) ? posts[0] : undefined;
+  return post ? mapWpPostDetail(post) : null;
 }
