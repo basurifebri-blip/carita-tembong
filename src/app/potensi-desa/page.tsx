@@ -7,8 +7,10 @@ import { PageHero } from "@/components/ui/PageHero";
 import { Badge } from "@/components/ui/Badge";
 import { Reveal } from "@/components/ui/Reveal";
 import { Mark } from "@/components/ui/Mark";
+import { Button } from "@/components/ui/Button";
 import { ExploreCallout } from "@/components/home/ExploreCallout";
 import { products } from "@/data/products";
+import { whatsappUrl } from "@/lib/whatsapp";
 import empingPemipihan from "../../../public/images/galeri/emping-pemipihan.jpg";
 import pasarUtama from "../../../public/images/galeri/pasar-pantai-carita.jpg";
 import pasarWelcome from "../../../public/images/galeri/pasar-welcome.jpg";
@@ -20,6 +22,9 @@ export const metadata: Metadata = {
   description:
     "Produk dan potensi ekonomi Desa Tembong: emping melinjo, opak, dan karya para pengrajin lokal yang diwariskan dari generasi ke generasi.",
 };
+
+const barokahProduct = products.find((product) => product.slug === "emping-opak-barokah");
+const villageProducts = products.filter((product) => product.slug !== "emping-opak-barokah");
 
 export default function PotensiDesaPage() {
   return (
@@ -60,7 +65,7 @@ export default function PotensiDesaPage() {
             description="Setiap produk punya cerita dan proses pembuatannya sendiri. Telusuri lebih dekat."
           />
           <Reveal className="mt-10 grid gap-6 md:grid-cols-2">
-            {products.map((item) => (
+            {villageProducts.map((item) => (
               <Link
                 key={item.slug}
                 href={`/potensi-desa/produk/${item.slug}`}
@@ -181,12 +186,78 @@ export default function PotensiDesaPage() {
           </Reveal>
 
           <p className="mt-8 max-w-3xl text-sm text-secondary">
-            Pemesanan produk juga dapat dikoordinasikan melalui mitra pemasaran
-            yang menghimpun hasil dari sejumlah pengrajin. Informasi kontak akan
-            ditampilkan setelah diverifikasi.
+            Produk dari UMKM Tembong dapat dipesan melalui katalog di bawah.
+            Untuk Emping &amp; Opak Barokah, pemesanan langsung terhubung ke Ibu
+            Siti Aminah melalui WhatsApp.
           </p>
         </Container>
       </section>
+
+      {barokahProduct?.catalog && (
+        <section className="section bg-surface-muted">
+          <Container>
+            <SectionTitle
+              eyebrow="UMKM Unggulan"
+              title="Katalog Emping & Opak Barokah"
+              description="Pilihan camilan khas Carita produksi Ibu Siti Aminah. Harga dapat berubah mengikuti ketersediaan bahan baku dan jumlah pesanan."
+            />
+            <Reveal className="mt-10 grid gap-6 md:grid-cols-3">
+              {barokahProduct.catalog.map((item) => {
+                const orderUrl = barokahProduct.contact
+                  ? whatsappUrl(
+                      barokahProduct.contact.whatsapp,
+                      `Halo Ibu Siti Aminah, saya tertarik memesan ${item.name} dari Desa Tembong.`,
+                    )
+                  : undefined;
+
+                return (
+                  <article
+                    key={item.name}
+                    className="flex flex-col overflow-hidden rounded-xl border border-soft bg-surface shadow-card"
+                  >
+                    <div className="relative aspect-square bg-white p-2">
+                      <Image
+                        src={item.image}
+                        alt={item.alt}
+                        fill
+                        placeholder="blur"
+                        sizes="(min-width: 768px) 24rem, 100vw"
+                        className="object-contain"
+                      />
+                    </div>
+                    <div className="flex flex-1 flex-col p-6">
+                      <h3 className="font-display text-xl font-semibold text-brand">
+                        {item.name}
+                      </h3>
+                      <p className="mt-2 text-sm leading-relaxed text-secondary">
+                        {item.description}
+                      </p>
+                      <p className="mt-4 font-semibold text-primary">{item.price}</p>
+                      <div className="mt-5 flex flex-wrap gap-3">
+                        <Button
+                          href={`/potensi-desa/produk/${barokahProduct.slug}`}
+                          variant="secondary"
+                        >
+                          Detail Produk
+                        </Button>
+                        {orderUrl && (
+                          <Button
+                            href={orderUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                          >
+                            Pesan WhatsApp
+                          </Button>
+                        )}
+                      </div>
+                    </div>
+                  </article>
+                );
+              })}
+            </Reveal>
+          </Container>
+        </section>
+      )}
 
       <ExploreCallout
         eyebrow="Dengarkan"

@@ -97,6 +97,29 @@ export const products: Product[] = [
       { label: "Opak singkong", value: "Rp30.000/kg" },
     ],
     variants: ["Original", "Balado", "Pedas manis"],
+    catalog: [
+      {
+        name: "Emping Barokah Original",
+        image: barokahEmpingOriginal,
+        alt: "Kemasan Emping Barokah rasa original produksi Ibu Siti Aminah.",
+        description: "Emping melinjo renyah dengan rasa original yang ringan dan gurih.",
+        price: "Mulai Rp10.000 · Rp60.000–Rp70.000/kg",
+      },
+      {
+        name: "Emping Barokah Varian Rasa",
+        image: barokahEmpingManis,
+        alt: "Kemasan Emping Barokah dengan pilihan rasa balado dan pedas manis.",
+        description: "Emping melinjo dengan pilihan rasa balado dan pedas manis khas Carita.",
+        price: "Mulai Rp10.000 · Rp60.000–Rp70.000/kg",
+      },
+      {
+        name: "Opak Singkong Barokah",
+        image: barokahOpak,
+        alt: "Kemasan Opak Singkong Barokah dengan pilihan rasa balado dan original.",
+        description: "Camilan singkong renyah dengan pilihan rasa original dan balado.",
+        price: "Mulai Rp10.000 · Rp30.000/kg",
+      },
+    ],
     contact: {
       name: "Ibu Siti Aminah",
       whatsapp: "+62 838-4487-4847",

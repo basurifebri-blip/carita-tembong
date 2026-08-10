@@ -7,6 +7,14 @@ export type ProductPhoto = {
   caption: string;
 };
 
+export type ProductCatalogItem = {
+  name: string;
+  image: StaticImageData;
+  alt: string;
+  description: string;
+  price: string;
+};
+
 export type Product = {
   slug: string;
   name: string;
@@ -35,6 +43,8 @@ export type Product = {
   prices?: { label: string; value: string }[];
   /** Product flavours or variants confirmed by the maker or packaging. */
   variants?: string[];
+  /** Individual products shown as a catalogue for a named brand. */
+  catalog?: ProductCatalogItem[];
   /**
    * Marketing-partner WhatsApp contact. Present ONLY when verified + consented
    * (CLAUDE.md §56-57); otherwise the detail page shows an honest fallback.
