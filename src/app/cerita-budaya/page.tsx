@@ -7,7 +7,9 @@ import { Button } from "@/components/ui/Button";
 import { Reveal } from "@/components/ui/Reveal";
 import { SundaDivider } from "@/components/sunda/SundaDivider";
 import { ExploreCallout } from "@/components/home/ExploreCallout";
+import { MemberCard } from "@/components/team/MemberCard";
 import { stories } from "@/data/stories";
+import { communityFigures } from "@/data/communityFigures";
 import heroImage from "../../../public/images/village/saung-tembong.jpg";
 import masjidGalaya from "../../../public/images/budaya/masjid-galaya.jpg";
 import masjidInterior from "../../../public/images/budaya/masjid-interior.jpg";
@@ -16,7 +18,7 @@ import masjidMihrab from "../../../public/images/budaya/masjid-mihrab.jpg";
 export const metadata: Metadata = {
   title: "Cerita & Budaya",
   description:
-    "Cerita dan budaya yang hidup di Desa Tembong: pengajian Jumat yang berpindah antar kampung, Jumat Bersih, serta pencak silat Perguruan Cibinong dan debus.",
+    "Cerita, budaya, dan tokoh masyarakat Desa Tembong: pengajian Jumat, Jumat Bersih, pengrajin, layanan warga, serta pencak silat Cibinong.",
 };
 
 const tema = [
@@ -27,10 +29,6 @@ const tema = [
   {
     title: "Kehidupan Desa",
     body: "Keseharian warga di kebun, sawah, dan rumah yang menjadi denyut desa.",
-  },
-  {
-    title: "Tokoh & Masyarakat",
-    body: "Orang-orang yang, dengan caranya masing-masing, membentuk wajah Tembong.",
   },
 ];
 
@@ -151,6 +149,30 @@ export default function CeritaBudayaPage() {
               </figure>
             ))}
           </Reveal>
+        </Container>
+      </section>
+
+      {/* Community figures — reuses the interactive Tim Tempura cards. */}
+      <section className="section bg-surface-muted">
+        <Container>
+          <SectionTitle
+            eyebrow="Tokoh & Masyarakat"
+            title="Orang-orang yang Menjaga Kehidupan Desa"
+            description="Perangkat desa, tenaga kesehatan, penggerak ekonomi, pengrajin, dan penjaga tradisi yang hadir dalam keseharian masyarakat Tembong."
+            align="center"
+          />
+
+          <Reveal className="mt-10 grid gap-x-8 gap-y-10 sm:grid-cols-2 lg:grid-cols-4">
+            {communityFigures.map((figure) => (
+              <MemberCard key={figure.name} member={figure} showIdentity />
+            ))}
+          </Reveal>
+
+          <p className="mx-auto mt-10 max-w-2xl text-center text-xs leading-relaxed text-secondary">
+            Nama dan jabatan mengikuti dokumentasi yang dihimpun bersama warga.
+            Informasi dapat diperbarui apabila terdapat perubahan jabatan atau
+            keterangan resmi dari Desa Tembong.
+          </p>
         </Container>
       </section>
 

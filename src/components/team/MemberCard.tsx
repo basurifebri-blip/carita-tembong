@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { useRef } from "react";
-import type { TeamMember } from "@/data/team";
+import type { PersonCardData } from "@/types/person";
 
 function initials(name: string): string {
   return name
@@ -21,7 +21,13 @@ const MAX_TILT = 12; // derajat maksimum kemiringan
  * Efek gerak hanya berlaku pada pointer (mouse) dan dinonaktifkan otomatis bila
  * pengunjung memilih `prefers-reduced-motion`, sehingga tetap nyaman dan aksesibel.
  */
-export function MemberCard({ member }: { member: TeamMember }) {
+export function MemberCard({
+  member,
+  showIdentity = false,
+}: {
+  member: PersonCardData;
+  showIdentity?: boolean;
+}) {
   const cardRef = useRef<HTMLDivElement>(null);
 
   const prefersReduced = () =>
@@ -90,9 +96,25 @@ export function MemberCard({ member }: { member: TeamMember }) {
         />
       </div>
 
-      {member.study && (
-        <figcaption className="mt-3 text-center text-sm text-secondary">
-          {member.study}
+      {(showIdentity || member.study) && (
+        <figcaption className="mt-3 text-center">
+          {showIdentity && (
+            <>
+              <h3 className="font-display text-lg font-semibold text-brand">
+                {member.name}
+              </h3>
+              {member.role && (
+                <p className="mt-1 text-sm font-medium text-primary">
+                  {member.role}
+                </p>
+              )}
+            </>
+          )}
+          {member.study && (
+            <p className="mt-1 text-xs leading-relaxed text-secondary">
+              {member.study}
+            </p>
+          )}
         </figcaption>
       )}
     </figure>

@@ -1,4 +1,5 @@
 import type { StaticImageData } from "next/image";
+import type { PersonCardData } from "@/types/person";
 
 import ahmad from "../../public/images/tim/ahmad-ilham-husyairi.png";
 import asyfa from "../../public/images/tim/asyfa-humairah.png";
@@ -17,13 +18,7 @@ import dplYuliawati from "../../public/images/tim/dpl-yuliawati-kusumaningrum.pn
  * di halaman ditampilkan apa adanya dan hanya ditambah keterangan fakultas.
  */
 
-export type TeamMember = {
-  name: string;
-  role?: string; // peran di tim (mis. "Koordinator Desa")
-  study?: string; // fakultas / program studi
-  image?: StaticImageData;
-  alt?: string;
-};
+export type TeamMember = PersonCardData;
 
 export const teamInfo = {
   name: "Tim Tempura",
