@@ -6,6 +6,7 @@ import { NewsCard } from "@/components/news/NewsCard";
 import { NewsEmptyState } from "@/components/news/NewsEmptyState";
 import { getLatestNews } from "@/lib/cms/news";
 import { cn } from "@/lib/utils";
+import type { NewsArticle } from "@/types/cms";
 
 type BeritaTerbaruProps = {
   eyebrow: string;
@@ -29,7 +30,17 @@ export async function BeritaTerbaru({
   tone = "surface",
   cta,
 }: BeritaTerbaruProps) {
-  const news = await getLatestNews(limit);
+  let news: NewsArticle[];
+
+  try {
+    news = await getLatestNews(limit);
+  } catch (error) {
+    // A temporary WordPress timeout must not block an unrelated Vercel build.
+    // Outside the build phase, keep throwing so ISR retains the last good page
+    // instead of replacing real news with an empty state.
+    if (process.env.NEXT_PHASE !== "phase-production-build") throw error;
+    news = [];
+  }
 
   return (
     <section className={cn("section", tone === "muted" && "bg-surface-muted")}>

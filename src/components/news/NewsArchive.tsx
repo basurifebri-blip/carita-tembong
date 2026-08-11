@@ -4,6 +4,7 @@ import { Reveal } from "@/components/ui/Reveal";
 import { NewsCard } from "@/components/news/NewsCard";
 import { NewsEmptyState } from "@/components/news/NewsEmptyState";
 import { getAllNews } from "@/lib/cms/news";
+import type { NewsArticle } from "@/types/cms";
 
 type NewsArchiveProps = {
   eyebrow?: string;
@@ -20,7 +21,16 @@ export async function NewsArchive({
   title,
   description,
 }: NewsArchiveProps) {
-  const news = await getAllNews();
+  let news: NewsArticle[];
+
+  try {
+    news = await getAllNews();
+  } catch (error) {
+    // Keep production builds deployable when WordPress is temporarily slow.
+    // Runtime failures still bubble up so ISR can preserve its last good page.
+    if (process.env.NEXT_PHASE !== "phase-production-build") throw error;
+    news = [];
+  }
 
   return (
     <section className="section">
