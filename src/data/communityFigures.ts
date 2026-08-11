@@ -1,5 +1,6 @@
 import type { PersonCardData } from "@/types/person";
 
+import amat from "../../public/images/tokoh/amat.png";
 import basriIskandar from "../../public/images/tokoh/basri-iskandar.png";
 import carikDesa from "../../public/images/tokoh/carik-desa.png";
 import eviCahya from "../../public/images/tokoh/evi-cahya-wulandari.png";
@@ -9,6 +10,7 @@ import maesaroh from "../../public/images/tokoh/maesaroh.png";
 import mahmudi from "../../public/images/tokoh/mahmudi.png";
 import mikah from "../../public/images/tokoh/mikah.png";
 import rana from "../../public/images/tokoh/rana.png";
+import sahari from "../../public/images/tokoh/sahari.png";
 import ustMadrais from "../../public/images/tokoh/ust-madrais.png";
 
 /**
@@ -51,6 +53,20 @@ export const communityFigures: PersonCardData[] = [
     study: "Kp. Salabarang",
     image: rana,
     alt: "Potret Rana, Ketua RW 001 Kampung Salabarang.",
+  },
+  {
+    name: "Amat",
+    role: "Ketua RW 002",
+    study: "Kp. Kadu Kokosan",
+    image: amat,
+    alt: "Potret Amat, Ketua RW 002 Kampung Kadu Kokosan.",
+  },
+  {
+    name: "Sahari",
+    role: "Ketua RW 003",
+    study: "Kp. Galaya",
+    image: sahari,
+    alt: "Potret Sahari, Ketua RW 003 Kampung Galaya.",
   },
   {
     name: "Maesaroh",

@@ -15,8 +15,15 @@ type Params = { slug: string };
  * to on-demand rendering (then notFound()).
  */
 export async function generateStaticParams(): Promise<Params[]> {
-  const news = await getAllNews();
-  return news.map((article) => ({ slug: article.slug }));
+  try {
+    const news = await getAllNews();
+    return news.map((article) => ({ slug: article.slug }));
+  } catch {
+    // A temporary CMS outage must not block unrelated production changes.
+    // With dynamicParams enabled by default, article pages are generated on
+    // demand as soon as WordPress is reachable again.
+    return [];
+  }
 }
 
 export async function generateMetadata({
