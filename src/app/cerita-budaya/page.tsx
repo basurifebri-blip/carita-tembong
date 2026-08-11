@@ -9,7 +9,7 @@ import { SundaDivider } from "@/components/sunda/SundaDivider";
 import { ExploreCallout } from "@/components/home/ExploreCallout";
 import { MemberCard } from "@/components/team/MemberCard";
 import { stories } from "@/data/stories";
-import { communityFigures } from "@/data/communityFigures";
+import { communityFigureGroups } from "@/data/communityFigures";
 import heroImage from "../../../public/images/village/saung-tembong.jpg";
 import masjidGalaya from "../../../public/images/budaya/masjid-galaya.jpg";
 import masjidInterior from "../../../public/images/budaya/masjid-interior.jpg";
@@ -162,11 +162,65 @@ export default function CeritaBudayaPage() {
             align="center"
           />
 
-          <Reveal className="mt-10 grid gap-x-8 gap-y-10 sm:grid-cols-2 lg:grid-cols-4">
-            {communityFigures.map((figure) => (
-              <MemberCard key={figure.name} member={figure} showIdentity />
-            ))}
-          </Reveal>
+          <div className="mt-12 space-y-8">
+            {communityFigureGroups.map((group, groupIndex) => {
+              const groupStyles = [
+                "border-brand/15 bg-surface",
+                "border-cultural/20 bg-surface-clay",
+                "border-brand/15 bg-surface-sage",
+              ];
+              const numberStyles = [
+                "bg-brand text-white",
+                "bg-cultural text-white",
+                "bg-interactive text-white",
+              ];
+              const gridColumns =
+                group.figures.length === 4
+                  ? "lg:grid-cols-4"
+                  : "lg:grid-cols-5";
+
+              return (
+                <Reveal
+                  key={group.title}
+                  delay={groupIndex * 80}
+                  className={`overflow-hidden rounded-2xl border p-5 shadow-card sm:p-7 lg:p-8 ${groupStyles[groupIndex]}`}
+                >
+                  <div className="mb-8 flex flex-col gap-4 border-b border-brand/10 pb-6 sm:flex-row sm:items-end sm:justify-between">
+                    <div className="flex items-start gap-4">
+                      <span
+                        className={`flex size-11 shrink-0 items-center justify-center rounded-full font-display text-lg font-semibold ${numberStyles[groupIndex]}`}
+                      >
+                        {String(groupIndex + 1).padStart(2, "0")}
+                      </span>
+                      <div>
+                        <p className="text-xs font-semibold uppercase tracking-[0.18em] text-cultural">
+                          {group.eyebrow}
+                        </p>
+                        <h3 className="mt-1 font-display text-2xl font-semibold text-brand sm:text-3xl">
+                          {group.title}
+                        </h3>
+                      </div>
+                    </div>
+                    <p className="max-w-xl text-sm leading-relaxed text-secondary sm:text-right">
+                      {group.description}
+                    </p>
+                  </div>
+
+                  <div
+                    className={`grid gap-x-6 gap-y-10 sm:grid-cols-2 ${gridColumns}`}
+                  >
+                    {group.figures.map((figure) => (
+                      <MemberCard
+                        key={figure.name}
+                        member={figure}
+                        showIdentity
+                      />
+                    ))}
+                  </div>
+                </Reveal>
+              );
+            })}
+          </div>
 
           <p className="mx-auto mt-10 max-w-2xl text-center text-xs leading-relaxed text-secondary">
             Nama dan jabatan mengikuti dokumentasi yang dihimpun bersama warga.

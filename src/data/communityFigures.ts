@@ -1,5 +1,7 @@
 import type { PersonCardData } from "@/types/person";
 
+import adangKosasih from "../../public/images/pemerintahan/adang-kosasih.png";
+import adlah from "../../public/images/pemerintahan/adlah.png";
 import amat from "../../public/images/tokoh/amat.png";
 import basriIskandar from "../../public/images/tokoh/basri-iskandar.png";
 import carikDesa from "../../public/images/tokoh/carik-desa.png";
@@ -18,7 +20,21 @@ import ustMadrais from "../../public/images/tokoh/ust-madrais.png";
  * jabatan mengikuti keterangan pada file foto; nama pribadi yang belum tersedia
  * tidak diterka atau ditambahkan.
  */
-export const communityFigures: PersonCardData[] = [
+export type CommunityFigureGroup = {
+  eyebrow: string;
+  title: string;
+  description: string;
+  figures: PersonCardData[];
+};
+
+const villageLeadership: PersonCardData[] = [
+  {
+    name: "Adang Kosasih, S.Pd",
+    role: "Kepala Desa",
+    study: "Pemerintah Desa Tembong",
+    image: adangKosasih,
+    alt: "Foto resmi Adang Kosasih, S.Pd, Kepala Desa Tembong.",
+  },
   {
     name: "Herman Hidayat, S.Pd.",
     role: "Sekretaris Desa",
@@ -33,6 +49,16 @@ export const communityFigures: PersonCardData[] = [
     image: carikDesa,
     alt: "Potret Carik Desa Tembong.",
   },
+  {
+    name: "Adlah, S.Pd",
+    role: "Ketua TP PKK",
+    study: "Desa Tembong",
+    image: adlah,
+    alt: "Foto resmi Adlah, S.Pd, Ketua Tim Penggerak PKK Desa Tembong.",
+  },
+];
+
+const regionalLeadership: PersonCardData[] = [
   {
     name: "Jaelani",
     role: "Kepala Dusun 1",
@@ -68,6 +94,9 @@ export const communityFigures: PersonCardData[] = [
     image: sahari,
     alt: "Potret Sahari, Ketua RW 003 Kampung Galaya.",
   },
+];
+
+const communityServices: PersonCardData[] = [
   {
     name: "Maesaroh",
     role: "Ketua BUMDes",
@@ -102,5 +131,29 @@ export const communityFigures: PersonCardData[] = [
     study: "Desa Tembong",
     image: basriIskandar,
     alt: "Potret Basri Iskandar atau Alek, Ketua Silat Cibinong.",
+  },
+];
+
+export const communityFigureGroups: CommunityFigureGroup[] = [
+  {
+    eyebrow: "Pemerintahan Desa",
+    title: "Pimpinan & Penggerak Desa",
+    description:
+      "Tokoh yang memimpin pelayanan, administrasi, dan gerakan keluarga di Desa Tembong.",
+    figures: villageLeadership,
+  },
+  {
+    eyebrow: "Kewilayahan",
+    title: "Dusun & Rukun Warga",
+    description:
+      "Pengurus wilayah yang menjadi penghubung terdekat antara warga dan pemerintah desa.",
+    figures: regionalLeadership,
+  },
+  {
+    eyebrow: "Pelayanan & Kemandirian",
+    title: "Kesehatan, Ekonomi & Tradisi",
+    description:
+      "Penggerak layanan kesehatan, ekonomi warga, keterampilan lokal, dan warisan budaya Tembong.",
+    figures: communityServices,
   },
 ];
