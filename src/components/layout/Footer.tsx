@@ -3,6 +3,7 @@ import { Container } from "@/components/ui/Container";
 import { LogoMark } from "@/components/ui/Logo";
 import { footerNav } from "@/config/navigation";
 import { siteConfig } from "@/config/site";
+import { whatsappUrl } from "@/lib/whatsapp";
 
 /**
  * Footer on deep Forest Green (design-system §47): a clean editorial layout with
@@ -73,9 +74,20 @@ export function Footer() {
             <p className="mt-4 text-sm text-surface/85">
               {siteConfig.institutional.village}
             </p>
+            <p className="mt-3 text-sm text-surface/75">
+              Kepala Desa (WhatsApp):{" "}
+              <a
+                href={whatsappUrl("+62 813-8354-1651")}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-medium text-decorative underline-offset-4 transition-colors hover:text-surface hover:underline"
+              >
+                0813-8354-1651
+              </a>
+            </p>
             <p className="mt-3 max-w-xs text-xs leading-relaxed text-surface/55">
-              Alamat, surel, dan media sosial resmi akan ditampilkan di sini
-              setelah diverifikasi bersama pemerintah desa.
+              Alamat dan surel resmi lainnya akan ditambahkan setelah
+              diverifikasi bersama pemerintah desa.
             </p>
           </div>
         </div>

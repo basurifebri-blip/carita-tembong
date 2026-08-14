@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/Button";
 import { Reveal } from "@/components/ui/Reveal";
 import { Mark } from "@/components/ui/Mark";
 import { ExploreCallout } from "@/components/home/ExploreCallout";
+import { whatsappUrl } from "@/lib/whatsapp";
 
 import heroImage from "../../../public/images/sehat/puskesmas-carita.jpg";
 import posyanduEdukasi from "../../../public/images/sehat/posyandu-edukasi.jpg";
@@ -22,6 +23,8 @@ import puskesmasEtikaBatuk from "../../../public/images/sehat/puskesmas-etika-ba
 import posyanduKenanga1 from "../../../public/images/sehat/posyandu-kenanga-1.jpg";
 import posyanduKenanga2 from "../../../public/images/sehat/posyandu-kenanga-2.jpg";
 import posyanduKenanga3 from "../../../public/images/sehat/posyandu-kenanga-3.jpg";
+import mahmudi from "../../../public/images/tokoh/mahmudi.png";
+import eviCahya from "../../../public/images/tokoh/evi-cahya-wulandari.png";
 
 export const metadata: Metadata = {
   title: "Tembong Sehat",
@@ -126,6 +129,26 @@ const fasilitasPuskesmas: { image: StaticImageData; alt: string; caption: string
     image: puskesmasEtikaBatuk,
     alt: "Poster etika batuk yang terpasang di dinding Puskesmas Carita.",
     caption: "Edukasi etika batuk",
+  },
+];
+
+const tenagaKesehatan: {
+  image: StaticImageData;
+  name: string;
+  role: string;
+  alt: string;
+}[] = [
+  {
+    image: mahmudi,
+    name: "Mahmudi, S.Kep., Ners.",
+    role: "Kepala Puskesmas Carita",
+    alt: "Potret Mahmudi, S.Kep., Ners., Kepala Puskesmas Carita.",
+  },
+  {
+    image: eviCahya,
+    name: "Evi Cahya Wulandari, S.Keb., Bdn.",
+    role: "Bidan Desa Tembong",
+    alt: "Potret Evi Cahya Wulandari, S.Keb., Bdn., Bidan Desa Tembong.",
   },
 ];
 
@@ -285,6 +308,91 @@ export default function TembongSehatPage() {
               </figure>
             ))}
           </Reveal>
+
+          {/* Tenaga kesehatan + kontak Puskesmas */}
+          <div className="mt-16 grid gap-8 lg:grid-cols-2 lg:gap-12">
+            <div>
+              <h3 className="type-h3 text-brand">Tenaga Kesehatan</h3>
+              <p className="mt-3 text-secondary">
+                Pelayanan kesehatan warga didampingi tenaga yang dikenal dekat
+                dengan masyarakat Tembong.
+              </p>
+              <div className="mt-6 grid grid-cols-2 gap-6">
+                {tenagaKesehatan.map((p) => (
+                  <figure key={p.name}>
+                    <div className="relative aspect-[4/5] overflow-hidden rounded-xl border border-soft bg-white shadow-card">
+                      <Image
+                        src={p.image}
+                        alt={p.alt}
+                        fill
+                        placeholder="blur"
+                        sizes="(min-width: 1024px) 15rem, 45vw"
+                        className="object-cover object-top"
+                      />
+                    </div>
+                    <figcaption className="mt-3">
+                      <p className="font-display text-base font-semibold text-brand">
+                        {p.name}
+                      </p>
+                      <p className="mt-0.5 text-sm text-cultural">{p.role}</p>
+                    </figcaption>
+                  </figure>
+                ))}
+              </div>
+            </div>
+
+            <div className="rounded-2xl border border-soft bg-surface p-6 shadow-card sm:p-8">
+              <span className="type-eyebrow text-cultural">Kontak</span>
+              <h3 className="mt-2 type-h3 text-brand">UPT Puskesmas Carita</h3>
+              <dl className="mt-6 flex flex-col gap-4 text-sm">
+                <div>
+                  <dt className="font-semibold text-primary">Alamat</dt>
+                  <dd className="mt-1 text-secondary">
+                    Jl. Sumur Dawa 01, Kp. Tembol, Desa Tembong, Kecamatan Carita,
+                    Kabupaten Pandeglang
+                  </dd>
+                </div>
+                <div>
+                  <dt className="font-semibold text-primary">WhatsApp</dt>
+                  <dd className="mt-1">
+                    <a
+                      href={whatsappUrl("0859 6024 3891")}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="font-medium text-interactive hover:underline"
+                    >
+                      0859 6024 3891
+                    </a>
+                  </dd>
+                </div>
+                <div>
+                  <dt className="font-semibold text-primary">Surel</dt>
+                  <dd className="mt-1">
+                    <a
+                      href="mailto:puskesmas.carita@gmail.com"
+                      className="font-medium text-interactive hover:underline"
+                    >
+                      puskesmas.carita@gmail.com
+                    </a>
+                  </dd>
+                </div>
+                <div>
+                  <dt className="font-semibold text-primary">Media Sosial</dt>
+                  <dd className="mt-1 flex flex-col gap-1 text-secondary">
+                    <a
+                      href="https://instagram.com/puskescarita"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="font-medium text-interactive hover:underline"
+                    >
+                      Instagram: @puskescarita
+                    </a>
+                    <span>Facebook: UPTD Puskesmas Carita</span>
+                  </dd>
+                </div>
+              </dl>
+            </div>
+          </div>
         </Container>
       </section>
 
