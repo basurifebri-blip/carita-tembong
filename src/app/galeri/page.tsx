@@ -10,7 +10,7 @@ import galeriHero from "../../../public/images/hero/galeri-hero.jpg";
 import curugCibanteri from "../../../public/images/hero/curug-cibanteri.jpg";
 import aliranSungai from "../../../public/images/wisata/aliran-sungai.jpg";
 import bulakan from "../../../public/images/wisata/bulakan-ciherang.jpg";
-import embungDesa from "../../../public/images/wisata/Embung Desa.png";
+import embungDesa from "../../../public/images/wisata/embung-desa.png";
 import kebun from "../../../public/images/village/kebun-tembong.jpg";
 import saung from "../../../public/images/village/saung-tembong.jpg";
 import curugKolam from "../../../public/images/galeri/curug-kolam.jpg";

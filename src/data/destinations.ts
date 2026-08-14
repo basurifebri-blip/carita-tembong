@@ -1,7 +1,7 @@
 import type { Destination } from "@/types/tourism";
 import curugImg from "../../public/images/hero/curug-cibanteri.jpg";
 import bulakanImg from "../../public/images/wisata/bulakan-ciherang.jpg";
-import embungImg from "../../public/images/wisata/Embung Desa.png";
+import embungImg from "../../public/images/wisata/embung-desa.png";
 
 /**
  * Documented tourism potential of Desa Tembong.

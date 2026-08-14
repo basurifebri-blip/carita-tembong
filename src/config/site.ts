@@ -42,5 +42,5 @@ export type SiteConfig = typeof siteConfig;
  * Trailing slashes are stripped so `${siteUrl}/path` is always well-formed.
  */
 export const siteUrl = (
-  process.env.NEXT_PUBLIC_SITE_URL ?? "https://desatembong.id"
+  process.env.NEXT_PUBLIC_SITE_URL ?? "https://desatembong.com"
 ).replace(/\/+$/, "");
