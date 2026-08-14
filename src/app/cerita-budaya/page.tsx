@@ -177,7 +177,9 @@ export default function CeritaBudayaPage() {
               const gridColumns =
                 group.figures.length === 4
                   ? "lg:grid-cols-4"
-                  : "lg:grid-cols-5";
+                  : group.figures.length === 6
+                    ? "lg:grid-cols-3"
+                    : "lg:grid-cols-5";
 
               return (
                 <Reveal
@@ -207,7 +209,7 @@ export default function CeritaBudayaPage() {
                   </div>
 
                   <div
-                    className={`grid gap-x-6 gap-y-10 sm:grid-cols-2 ${gridColumns}`}
+                    className={`grid grid-cols-2 gap-x-4 gap-y-8 sm:gap-x-6 sm:gap-y-10 ${gridColumns}`}
                   >
                     {group.figures.map((figure) => (
                       <MemberCard

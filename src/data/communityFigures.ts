@@ -14,6 +14,8 @@ import mikah from "../../public/images/tokoh/mikah.png";
 import rana from "../../public/images/tokoh/rana.png";
 import sahari from "../../public/images/tokoh/sahari.png";
 import ustMadrais from "../../public/images/tokoh/ust-madrais.png";
+import sapari from "../../public/images/tokoh/sapari.png";
+import ahmadFurqon from "../../public/images/tokoh/ahmad-furqon.png";
 
 /**
  * Tokoh masyarakat yang didokumentasikan bersama warga Desa Tembong. Nama dan
@@ -94,6 +96,13 @@ const regionalLeadership: PersonCardData[] = [
     image: sahari,
     alt: "Potret Sahari, Ketua RW 003 Kampung Galaya.",
   },
+  {
+    name: "Sapari",
+    role: "Ketua RW 004",
+    study: "Kp. Tembol",
+    image: sapari,
+    alt: "Potret Sapari, Ketua RW 004 Kampung Tembol.",
+  },
 ];
 
 const communityServices: PersonCardData[] = [
@@ -131,6 +140,13 @@ const communityServices: PersonCardData[] = [
     study: "Desa Tembong",
     image: basriIskandar,
     alt: "Potret Basri Iskandar atau Alek, Ketua Silat Cibinong.",
+  },
+  {
+    name: "Ahmad Furqon",
+    role: "Ketua Koperasi Desa",
+    study: "Kopdes KDKMP Desa Tembong",
+    image: ahmadFurqon,
+    alt: "Potret Ahmad Furqon, Ketua Koperasi Desa Tembong.",
   },
 ];
 
